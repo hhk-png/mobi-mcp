@@ -1,0 +1,70 @@
+{
+  "name": "mobi-mcp",
+  "type": "module",
+  "version": "0.0.4",
+  "packageManager": "pnpm@10.7.0",
+  "description": "mcp about load content from mobi file",
+  "author": "hhk-png <fangluoabc@163.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/hhk-png/mobi-mcp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hhk-png/mobi-mcp"
+  },
+  "bugs": "https://github.com/hhk-png/mobi-mcp/issues",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.mjs"
+    }
+  },
+  "main": "dist/index.mjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mobi-mcp": "dist/index.mjs"
+  },
+  "browser": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "start": "node dist/index.js",
+    "start:sse": "node dist/sse.js",
+    "inspect": "pnpm exec mcp-inspector start",
+    "lint": "eslint . --cache --fix",
+    "prepare": "simple-git-hooks",
+    "release": "bumpp",
+    "publish:ci": "pnpm -r publish --access public --no-git-checks"
+  },
+  "dependencies": {
+    "@lingo-reader/mobi-parser": "^0.2.5",
+    "@modelcontextprotocol/sdk": "1.7.0",
+    "express": "^4.21.2",
+    "zod": "^3.23.8",
+    "zod-to-json-schema": "^3.23.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.11.0",
+    "@modelcontextprotocol/inspector": "^0.7.0",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.13.14",
+    "bumpp": "^10.1.0",
+    "lint-staged": "^15.5.0",
+    "shx": "^0.3.4",
+    "simple-git-hooks": "^2.12.1",
+    "typescript": "^5.6.2",
+    "unbuild": "^3.5.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint . --fix --cache"
+  }
+}
