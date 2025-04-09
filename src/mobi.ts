@@ -1,4 +1,4 @@
-import { Mobi } from "@lingo-reader/mobi-parser";
+import type { Mobi } from '@lingo-reader/mobi-parser'
 
 let mobi: Mobi | undefined
 

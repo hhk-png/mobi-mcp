@@ -1,12 +1,12 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
-import { addResetOrInitMobiTool } from './resetOrInitMobi'
-import { addGetFileInfoTool } from './getFileInfo'
-import { addGetSpineTool } from './getSpine'
-import { addGetMetadataTool } from './getMetadata'
-import { addResolveHrefTool } from './resolveHref'
 import { addGetCoverImageTool } from './getCoverImage'
+import { addGetFileInfoTool } from './getFileInfo'
+import { addGetMetadataTool } from './getMetadata'
+import { addGetSpineTool } from './getSpine'
 import { addGetTocTool } from './getToc'
 import { addLoadChapterTool } from './loadChapter'
+import { addResetOrInitMobiTool } from './resetOrInitMobi'
+import { addResolveHrefTool } from './resolveHref'
 
 export function addTools(server: McpServer) {
   addResetOrInitMobiTool(server)

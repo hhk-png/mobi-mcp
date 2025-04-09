@@ -1,4 +1,4 @@
-<h2 style="text-align:center"><a href="./README-zh.md">中文文档</a></h2>
+<a href="./README-zh.md">中文文档</a>
 
 This project is an MCP related to mobi files, providing an MCP tool for reading mobi file contents.
 

@@ -1,6 +1,6 @@
-import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js"
-import { getMobiFile } from "../mobi"
-import { readFile } from "fs/promises"
+import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
+import { readFile } from 'node:fs/promises'
+import { getMobiFile } from '../mobi'
 
 function getImageMimeType(suffix: string) {
   switch (suffix) {
@@ -28,7 +28,7 @@ export function addGetCoverImageTool(server: McpServer) {
           content: [{
             type: 'text',
             text: 'No cover image found.',
-          }]
+          }],
         }
       }
       const image = await readFile(imageUri)
@@ -39,8 +39,8 @@ export function addGetCoverImageTool(server: McpServer) {
           type: 'image',
           data: `data:${mimetype};base64,${base64Image}`,
           mimeType: mimetype,
-        }]
+        }],
       }
-    }
+    },
   )
 }

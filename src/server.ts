@@ -1,6 +1,6 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js'
-import { addTools } from './tools/index'
 import { destroyMobiFile } from './mobi'
+import { addTools } from './tools/index'
 // import { addResources } from './resources'
 
 // Create an MCP server
